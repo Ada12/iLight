@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="icon/favicon.png">
+    <title>Carousel Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/farbtastic.css" rel="stylesheet" type="text/css" />
+  </head>
+<!-- NAVBAR
+================================================== -->
+  <body>
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="img/ny.jpg" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1><strong>iLight</strong></h1>
+              <p>南阳市白河花园景观灯管理平台</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="img/ny1.jpg" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1><strong>iLight</strong></h1>
+              <p>南阳市白河花园景观灯管理平台</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="img/ny2.jpg" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1><strong>iLight</strong></h1>
+              <p>南阳市白河花园景观灯管理平台</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div><!-- /.carousel -->
+
+<!-- Button trigger modal -->
+      <div class="myDiv">
+        <div class="applyDiv">
+          <button type="button" class="btn btn-primary" onclick="toGradient()">
+            应用所有
+          </button>
+        </div>
+        <div class="dropdown dropDiv">
+        <button id="dLabel" class="btn btn-primary" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          灯的类型
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dLabel">
+          ...
+          </ul>
+        </div>
+        <div class="colorDiv">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+            颜色
+          </button>
+        </div>
+        <div id="displayColor" class="displayColor">
+          &nbsp;
+        </div>  
+      </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">设置灯</h4>
+          </div>
+          <div class="modal-body chooseCenterF">
+              <div id="picker"></div>
+              <br/>
+              <div class="form-item"><label for="color">Color:</label><input type="text" id="color" name="color" value="#CCCCCC" /></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="changeColor()">保存颜色</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container marketing operatingBox">
+      <div id="row" class="row rowTop">
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" id="light1" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>Heading</h2>
+          <p>
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myLight">修改 &raquo;</button>
+          </p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" id="light2" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>Heading</h2>
+          <p><a class="btn btn-default" href="#">修改 &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" id="light3" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>Heading</h2>
+          <p><a class="btn btn-default" href="#">修改 &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>Heading</h2>
+          <p><a class="btn btn-default" href="#">修改 &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>Heading</h2>
+          <p><a class="btn btn-default" href="#">修改 &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>Heading</h2>
+          <p><a class="btn btn-default" href="#">修改 &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>Heading</h2>
+          <p><a class="btn btn-default" href="#">修改 &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>Heading</h2>
+          <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>Heading</h2>
+          <p><a class="btn btn-default" href="#">修改 &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>Heading</h2>
+          <p><a class="btn btn-default" href="#">修改 &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>Heading</h2>
+          <p><a class="btn btn-default" href="#">修改 &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>Heading</h2>
+          <p><a class="btn btn-default" href="#">修改 &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>Heading</h2>
+          <p><a class="btn btn-default" href="#">修改 &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>Heading</h2>
+          <p><a class="btn btn-default" href="#">修改 &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>Heading</h2>
+          <p><a class="btn btn-default" href="#">修改 &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+      <!-- Modal -->
+      <div class="modal fade" id="myLight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">选择颜色</h4>
+          </div>
+          <div class="modal-body chooseCenterF">
+              <div id="pickerForEach"></div>
+              <br/>
+              <div class="form-item"><label for="colorForEach">Color:</label><input type="text" id="colorForEach" name="colorForEach" value="#CCCCCC" /></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="changeColor()">保存颜色</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/farbtastic.js"></script>
+    <script src="js/holder.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+      $('#demo').hide();
+      $('#picker').farbtastic('#color');
+      });
+      
+      $(document).ready(function() {
+      $('#demoForEach').hide();
+      $('#pickerForEach').farbtastic('#colorForEach');
+      });
+    </script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

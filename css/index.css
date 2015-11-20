@@ -1,0 +1,60 @@
+/*
+#light2{
+	width:200px;height:200px;border-radius:100px;
+    background-image: -webkit-radial-gradient(hsla(120,70%,60%,1),hsla(120,70%,60%,.8),hsla(120,70%,60%,.6),hsla(120,70%,60%,.4),hsla(120,70%,60%,.2));
+FFFFEF
+}
+*/
+body{
+	background-color: #FFFFDF;
+}
+
+.lightInitial{
+	background-color:#CCCCCC;
+	width:225px;height:225px;
+}
+
+.operatingBox{
+    border: 2px solid #CCCCCC;
+    -moz-border-radius: 15px; 
+    -webkit-border-radius: 15px; 
+    border-radius:15px; 
+    background-color: #FFFFFF;  
+}
+
+.rowTop{
+	margin-top: 35px;
+}
+
+.displayColor{
+	background-color:#999999;
+	width:32px;height:32px;
+	-moz-border-radius: 5px; 
+    -webkit-border-radius: 5px; 
+    border-radius:5px; 
+	float: right;
+	margin-right: 5px;
+}
+
+.myDiv{
+	margin-right: 20%;
+	margin-bottom: 110px;
+}
+
+.colorDiv{
+	float: right;
+	margin-right: 5px;
+}
+
+.applyDiv{
+	float: right;
+}
+
+.chooseCenterF{
+	margin-left: 29%;
+}
+
+.dropDiv{
+	float: right;
+	margin-right: 5px;
+}
