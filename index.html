@@ -100,12 +100,70 @@
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
             </button>
-            <h4 class="modal-title" id="myModalLabel">设置灯</h4>
+            <h4 class="modal-title" id="myModalLabel">设置景观灯</h4>
           </div>
-          <div class="modal-body chooseCenterF">
-              <div id="picker"></div>
-              <br/>
-              <div class="form-item"><label for="color">Color:</label><input type="text" id="color" name="color" value="#CCCCCC" /></div>
+          <div class="modal-body">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      颜色
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                    <div id="picker" class="colorPicker"></div>
+                    <div class="form-item" class="colorLabel"><label for="color">Color:</label><input type="text" id="color" name="color" value="#CCCCCC" /></div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      灯
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+                    <ul class="list-group leftColor">
+                      <li class="list-group-item leftColor">
+                        <input name="Fruit" type="checkbox" value="" />第一盏灯
+                      </li>
+                      <li class="list-group-item leftColor">
+                        <input name="Fruit" type="checkbox" value="" />第二盏灯
+                      </li>
+                      <li class="list-group-item leftColor">
+                        <input name="Fruit" type="checkbox" value="" />第三盏灯
+                      </li>
+                      <li class="list-group-item leftColor">
+                        <input name="Fruit" type="checkbox" value="" />第四盏灯
+                      </li>
+                      <li class="list-group-item leftColor">
+                        <input name="Fruit" type="checkbox" value="" />第五盏灯
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThree">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      视频
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                  <div class="panel-body">
+                    3333333333333333333333333333333333
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
