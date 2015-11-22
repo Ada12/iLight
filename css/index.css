@@ -69,3 +69,24 @@ body{
 	border-left-width: 5px;
 	border-left-color:#1b809e;
 }
+
+.lightCheckbox{
+	margin-right: 10px;
+}
+
+.addVideo{
+	float: right;
+	margin-right: 20px;
+}
+
+.saveAll{
+	float: right;
+	margin-top: 15px;
+}
+
+.lightSliderPos{
+	width:600px; 
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 15%;
+}

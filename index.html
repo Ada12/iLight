@@ -20,7 +20,9 @@
     <!-- Custom styles for this template -->
     <link href="css/carousel.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
-    <link href="css/farbtastic.css" rel="stylesheet" type="text/css" />
+    <link href="css/farbtastic.css" rel="stylesheet"/>
+    <link href="css/bootstrap.file-input.css" rel="stylesheet">
+   <link href="css/jquery.range.css" rel="stylesheet">
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -71,10 +73,11 @@
 <!-- Button trigger modal -->
       <div class="myDiv">
         <div class="applyDiv">
-          <button type="button" class="btn btn-primary" onclick="toGradient()">
+          <button type="button" class="btn btn-primary" onclick="applyToAll()">
             应用所有
           </button>
         </div>
+        <!--
         <div class="dropdown dropDiv">
         <button id="dLabel" class="btn btn-primary" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           灯的类型
@@ -84,16 +87,18 @@
           ...
           </ul>
         </div>
+        -->
         <div class="colorDiv">
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-            颜色
+            设置
           </button>
         </div>
         <div id="displayColor" class="displayColor">
           &nbsp;
         </div>  
       </div>
-    <!-- Modal -->
+
+    <!-- Modal ALL-->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -103,6 +108,7 @@
             <h4 class="modal-title" id="myModalLabel">设置景观灯</h4>
           </div>
           <div class="modal-body">
+            <h4>设置屏幕：</h4>
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
@@ -131,19 +137,19 @@
                   <div class="panel-body">
                     <ul class="list-group leftColor">
                       <li class="list-group-item leftColor">
-                        <input name="Fruit" type="checkbox" value="" />第一盏灯
+                        <input name="Fruit" type="checkbox" value="" />&nbsp;&nbsp;第一盏灯
                       </li>
                       <li class="list-group-item leftColor">
-                        <input name="Fruit" type="checkbox" value="" />第二盏灯
+                        <input name="Fruit" type="checkbox" value="" />&nbsp;&nbsp;第二盏灯
                       </li>
                       <li class="list-group-item leftColor">
-                        <input name="Fruit" type="checkbox" value="" />第三盏灯
+                        <input name="Fruit" type="checkbox" value="" />&nbsp;&nbsp;第三盏灯
                       </li>
                       <li class="list-group-item leftColor">
-                        <input name="Fruit" type="checkbox" value="" />第四盏灯
+                        <input name="Fruit" type="checkbox" value="" />&nbsp;&nbsp;第四盏灯
                       </li>
                       <li class="list-group-item leftColor">
-                        <input name="Fruit" type="checkbox" value="" />第五盏灯
+                        <input name="Fruit" type="checkbox" value="" />&nbsp;&nbsp;第五盏灯
                       </li>
                     </ul>
                   </div>
@@ -159,7 +165,381 @@
                 </div>
                 <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                   <div class="panel-body">
-                    3333333333333333333333333333333333
+                    <ul class="list-group leftColor">
+                      <li class="list-group-item leftColor">
+                        <input name="Fruit" type="radio" value="" />&nbsp;&nbsp;第一个视频
+                      </li>
+                      <li class="list-group-item leftColor">
+                        <input name="Fruit" type="radio" value="" />&nbsp;&nbsp;第二个视频
+                      </li>
+                      <li class="list-group-item leftColor">
+                        <input name="Fruit" type="radio" value="" />&nbsp;&nbsp;第三个视频
+                      </li>
+                      <li class="list-group-item leftColor">
+                        <input name="Fruit" type="radio" value="" />&nbsp;&nbsp;第四个视频
+                      </li>
+                      <li class="list-group-item leftColor">
+                        <input name="Fruit" type="radio" value="" />&nbsp;&nbsp;第五个视频
+                      </li>
+                    </ul>
+                    <button class="btn btn-primary addVideo" data-toggle="collapse" href="#collapse" aria-expanded="false" aria-controls="collapse">
+                      新增
+                      <!--<img src="img/add.png" class="addVideo" width="50px" height="50px">-->
+                    </button>
+                    <br/>
+                    <div class="collapse" id="collapse">
+                      <div class="well">
+                        <form>
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">名称：</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="名称">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputFile">封面：</label>
+                            <input type="file" id="coverFile">
+                            <p class="help-block">封面说明</p>
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputFile">视频：</label>
+                            <input type="file" id="videoFile">
+                            <p class="help-block">视频说明</p>
+                          </div>
+                          <button type="submit" class="btn btn-default">上传</button>
+                        </form>                
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingFour">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        亮度
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                    <div class="panel-body">
+                      <div class="lightSliderPos">
+                        <input type="hidden" class="single-slider" value="66" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h4>设置LED：</h4>
+              <div class="panel-group" id="accordionLED" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingOneLED">
+                    <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" data-parent="#accordionLED" href="#collapseOneLED" aria-expanded="true" aria-controls="collapseOneLED">
+                        颜色
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseOneLED" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOneLED">
+                    <div class="panel-body">
+                      <div id="pickerLED" class="colorPicker"></div>
+                      <div class="form-item" class="colorLabel"><label for="color">Color:</label><input type="text" id="colorLED" name="color" value="#CCCCCC" /></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingTwoLED">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordionLED" href="#collapseTwoLED" aria-expanded="false" aria-controls="collapseTwoLED">
+                        亮度
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseTwoLED" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwoLED">
+                    <div class="panel-body">
+                      <div class="lightSliderPos">
+                        <input type="hidden" class="single-slider" value="66" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="changeAllColor()">保存修改</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Light Panel -->
+    <div class="container marketing operatingBox">
+      <div id="row" class="row rowTop">
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" id="light1" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>第1盏灯</h2>
+          <p>
+            <button type="button" class="btn btn-default" id="b1" data-toggle="modal" data-target="#myLight" onclick="geneCurrentLight(this)">修改 &raquo;</button>
+          </p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" id="light2" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>第2盏灯</h2>
+          <p>
+            <button type="button" class="btn btn-default" id="b2" data-toggle="modal" data-target="#myLight" onclick="geneCurrentLight(this)">修改 &raquo;</button>
+          </p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" id="light3" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>第3盏灯</h2>
+          <p>
+            <button type="button" class="btn btn-default" id="b3" data-toggle="modal" data-target="#myLight" onclick="geneCurrentLight(this)">修改 &raquo;</button>
+          </p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" id="light4" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>第4盏灯</h2>
+          <p>
+            <button type="button" class="btn btn-default" id="b4" data-toggle="modal" data-target="#myLight" onclick="geneCurrentLight(this)">修改 &raquo;</button>
+          </p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" id="light5" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>第5盏灯</h2>
+          <p>
+            <button type="button" class="btn btn-default" id="b5" data-toggle="modal" data-target="#myLight" onclick="geneCurrentLight(this)">修改 &raquo;</button>
+          </p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" id="light6" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>第6盏灯</h2>
+          <p>
+            <button type="button" class="btn btn-default" id="b6" data-toggle="modal" data-target="#myLight" onclick="geneCurrentLight(this)">修改 &raquo;</button>
+          </p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" id="light7" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>第7盏灯</h2>
+          <p>
+            <button type="button" class="btn btn-default" id="b7" data-toggle="modal" data-target="#myLight" onclick="geneCurrentLight(this)">修改 &raquo;</button>
+          </p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" id="light8" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>第8盏灯</h2>
+          <p>
+            <button type="button" class="btn btn-default" id="b8" data-toggle="modal" data-target="#myLight" onclick="geneCurrentLight(this)">修改 &raquo;</button>
+          </p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" id="light9" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>第9盏灯</h2>
+          <p>
+            <button type="button" class="btn btn-default" id="b9" data-toggle="modal" data-target="#myLight" onclick="geneCurrentLight(this)">修改 &raquo;</button>
+          </p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" id="light10" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>第10盏灯</h2>
+          <p>
+            <button type="button" class="btn btn-default" id="b10" data-toggle="modal" data-target="#myLight" onclick="geneCurrentLight(this)">修改 &raquo;</button>
+          </p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" id="light11" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>第11盏灯</h2>
+          <p>
+            <button type="button" class="btn btn-default" id="b11" data-toggle="modal" data-target="#myLight" onclick="geneCurrentLight(this)">修改 &raquo;</button>
+          </p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" id="light12" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>第12盏灯</h2>
+          <p>
+            <button type="button" class="btn btn-default" id="b12" data-toggle="modal" data-target="#myLight" onclick="geneCurrentLight(this)">修改 &raquo;</button>
+          </p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" id="light13" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>第13盏灯</h2>
+          <p>
+            <button type="button" class="btn btn-default" id="b13" data-toggle="modal" data-target="#myLight" onclick="geneCurrentLight(this)">修改 &raquo;</button>
+          </p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" id="light14" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>第14盏灯</h2>
+          <p>
+            <button type="button" class="btn btn-default" id="b14" data-toggle="modal" data-target="#myLight" onclick="geneCurrentLight(this)">修改 &raquo;</button>
+          </p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle lightInitial" id="light15" src="img/dp2.png" alt="Generic placeholder image">
+          <h2>第15盏灯</h2>
+          <p>
+            <button type="button" class="btn btn-default" id="b15" data-toggle="modal" data-target="#myLight" onclick="geneCurrentLight(this)">修改 &raquo;</button>
+          </p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+    <!-- Modal MyLight -->
+    <div class="modal fade" id="myLight" tabindex="-1" role="dialog" aria-labelledby="myModalLabelForEach">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabelForEach">设置景观灯</h4>
+          </div>
+          <div class="modal-body">
+            <h4>设置屏幕：</h4>
+            <div class="panel-group" id="accordionForEach" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOneForEach">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordionForEach" href="#collapseOneForEach" aria-expanded="true" aria-controls="collapseOneForEach">
+                      颜色
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOneForEach" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOneForEach">
+                  <div class="panel-body">
+                    <div id="pickerForEach" class="colorPicker"></div>
+                    <div class="form-item" class="colorLabel"><label for="colorForEach">Color:</label><input type="text" id="colorForEach" name="color" value="#CCCCCC" /></div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwoForEach">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordionForEach" href="#collapseTwoForEach" aria-expanded="false" aria-controls="collapseTwoForEach">
+                      灯
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseTwoForEach" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwoForEach">
+                  <div class="panel-body">
+                    <ul class="list-group leftColor">
+                      <li class="list-group-item leftColor">
+                        <input name="Fruit" type="checkbox" value="" />&nbsp;&nbsp;第一盏灯
+                      </li>
+                      <li class="list-group-item leftColor">
+                        <input name="Fruit" type="checkbox" value="" />&nbsp;&nbsp;第二盏灯
+                      </li>
+                      <li class="list-group-item leftColor">
+                        <input name="Fruit" type="checkbox" value="" />&nbsp;&nbsp;第三盏灯
+                      </li>
+                      <li class="list-group-item leftColor">
+                        <input name="Fruit" type="checkbox" value="" />&nbsp;&nbsp;第四盏灯
+                      </li>
+                      <li class="list-group-item leftColor">
+                        <input name="Fruit" type="checkbox" value="" />&nbsp;&nbsp;第五盏灯
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThreeForEach">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThreeForEach" aria-expanded="false" aria-controls="collapseThreeForEach">
+                      视频
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseThreeForEach" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThreeForEach">
+                  <div class="panel-body">
+                    <ul class="list-group leftColor">
+                      <li class="list-group-item leftColor">
+                        <input name="Fruit" type="radio" value="" />&nbsp;&nbsp;第一个视频
+                      </li>
+                      <li class="list-group-item leftColor">
+                        <input name="Fruit" type="radio" value="" />&nbsp;&nbsp;第二个视频
+                      </li>
+                      <li class="list-group-item leftColor">
+                        <input name="Fruit" type="radio" value="" />&nbsp;&nbsp;第三个视频
+                      </li>
+                      <li class="list-group-item leftColor">
+                        <input name="Fruit" type="radio" value="" />&nbsp;&nbsp;第四个视频
+                      </li>
+                      <li class="list-group-item leftColor">
+                        <input name="Fruit" type="radio" value="" />&nbsp;&nbsp;第五个视频
+                      </li>
+                    </ul>
+                    <button class="btn btn-primary addVideo" data-toggle="collapse" href="#collapseExampleForEach" aria-expanded="false" aria-controls="collapseExampleForEach">
+                      新增
+                      <!--<img src="img/add.png" class="addVideo" width="50px" height="50px">-->
+                    </button>
+                    <br/>
+                    <div class="collapse" id="collapseExampleForEach">
+                      <div class="well">
+                        <form>
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">名称：</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="名称">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputFile">封面：</label>
+                            <input type="file" id="coverFile">
+                            <p class="help-block">封面说明</p>
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputFile">视频：</label>
+                            <input type="file" id="videoFile">
+                            <p class="help-block">视频说明</p>
+                          </div>
+                          <button type="submit" class="btn btn-default">上传</button>
+                        </form>                
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingFourForEach">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordionForEach" href="#collapseFourForEach" aria-expanded="false" aria-controls="collapseFourForEach">
+                        亮度
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseFourForEach" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFourForEach">
+                    <div class="panel-body">
+                      <div class="lightSliderPos">
+                        <input type="hidden" class="single-slider" value="66" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <h4>设置LED：</h4>
+            <div class="panel-group" id="accordionLEDForEach" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOneLEDForEach">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordionLEDForEach" href="#collapseOneLEDForEach" aria-expanded="true" aria-controls="collapseOneLEDForEach">
+                      颜色
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOneLEDForEach" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOneLEDForEach">
+                  <div class="panel-body">
+                    <div id="pickerLEDForEach" class="colorPicker"></div>
+                    <div class="form-item" class="colorLabel"><label for="color">Color:</label><input type="text" id="colorLEDForEach" name="color" value="#CCCCCC" /></div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwoLEDForEach">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordionLEDForEach" href="#collapseTwoLEDForEach" aria-expanded="false" aria-controls="collapseTwoLEDForEach">
+                      亮度
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseTwoLEDForEach" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwoLEDForEach">
+                  <div class="panel-body">
+                    <div class="lightSliderPos">
+                        <input type="hidden" class="single-slider" value="66" />
+                      </div>
                   </div>
                 </div>
               </div>
@@ -167,114 +547,23 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="changeColor()">保存颜色</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container marketing operatingBox">
-      <div id="row" class="row rowTop">
-        <div class="col-lg-4">
-          <img class="img-circle lightInitial" id="light1" src="img/dp2.png" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p>
-            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myLight">修改 &raquo;</button>
-          </p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle lightInitial" id="light2" src="img/dp2.png" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p><a class="btn btn-default" href="#">修改 &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle lightInitial" id="light3" src="img/dp2.png" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p><a class="btn btn-default" href="#">修改 &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle lightInitial" src="img/dp2.png" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p><a class="btn btn-default" href="#">修改 &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle lightInitial" src="img/dp2.png" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p><a class="btn btn-default" href="#">修改 &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle lightInitial" src="img/dp2.png" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p><a class="btn btn-default" href="#">修改 &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle lightInitial" src="img/dp2.png" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p><a class="btn btn-default" href="#">修改 &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle lightInitial" src="img/dp2.png" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle lightInitial" src="img/dp2.png" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p><a class="btn btn-default" href="#">修改 &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle lightInitial" src="img/dp2.png" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p><a class="btn btn-default" href="#">修改 &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle lightInitial" src="img/dp2.png" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p><a class="btn btn-default" href="#">修改 &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle lightInitial" src="img/dp2.png" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p><a class="btn btn-default" href="#">修改 &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle lightInitial" src="img/dp2.png" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p><a class="btn btn-default" href="#">修改 &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle lightInitial" src="img/dp2.png" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p><a class="btn btn-default" href="#">修改 &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle lightInitial" src="img/dp2.png" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p><a class="btn btn-default" href="#">修改 &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-      <!-- Modal -->
-      <div class="modal fade" id="myLight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-            </button>
-            <h4 class="modal-title" id="myModalLabel">选择颜色</h4>
-          </div>
-          <div class="modal-body chooseCenterF">
-              <div id="pickerForEach"></div>
-              <br/>
-              <div class="form-item"><label for="colorForEach">Color:</label><input type="text" id="colorForEach" name="colorForEach" value="#CCCCCC" /></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="changeColor()">保存颜色</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="applyToOne()">保存修改</button>
           </div>
         </div>
       </div>
     </div>
     </div>
-
+    <div class="container">
+      <button class="btn btn-primary saveAll">保存所有修改</button>
+    </div>
+    <div class="container">
+      <hr class="featurette-divider">
+    <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">回到顶部</a></p>
+        <p>&copy; 2015 Tongji University. &middot; </p>
+      </footer>
+    </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -284,6 +573,8 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/farbtastic.js"></script>
     <script src="js/holder.js"></script>
+    <script src="js/bootstrap.file-input.js"></script>
+    <script src="js/jquery.range.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
       $('#demo').hide();
@@ -294,7 +585,27 @@
       $('#demoForEach').hide();
       $('#pickerForEach').farbtastic('#colorForEach');
       });
-    </script>
+      $(document).ready(function() {
+      $('#demoLED').hide();
+      $('#pickerLED').farbtastic('#colorLED');
+      });
+      $(function(){
+        $('.single-slider').jRange({
+          from: 0,
+          to: 100,
+          step: 1,
+          scale: [0,25,50,75,100],
+          format: '%s',
+          width: 300,
+          showLabels: true,
+          showScale: true
+        });      
+        // $("#g1").click(function(){
+        //   var aa = $(".single-slider").val();
+        //   alert(aa);
+        // });
+      });
+          </script>
     <script src="js/index.js"></script>
   </body>
 </html>

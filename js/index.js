@@ -1,15 +1,23 @@
-function changeColor(){
+var CurrentLight;
+
+function changeAllColor(){
 	var color = document.getElementById('color').value;
 	var test = $("#displayColor");
 	test.css("background-color", color);
 }
 
 function applyToAll(){
-	$("#row").find("img").css("background-color", document.getElementById('color').value);
+	//$("#row").find("img").css("background-color", document.getElementById('color').value);
+	var color = document.getElementById('color').value;
+	var hsl = toGradient(color);
+	var hM = hsl[0];
+	var sM = hsl[1];
+	var lM = hsl[2];
+	$("#row").find("img").css({"background-color": "#FFFFFF"});
+	$("#row").find("img").css({"background-image": "-webkit-radial-gradient(hsla("+ hM +","+ sM +","+ lM +",1),hsla("+ hM +","+ sM +","+ lM +",.8),hsla("+ hM +","+ sM +","+ lM +",.6),hsla("+ hM +","+ sM +","+ lM +",.4),hsla("+ hM +","+ sM +","+ lM +",.2))"});
 }
 
-function  toGradient(){
-	var color = document.getElementById('color').value;
+function toGradient(color){
 	var r = parseInt(color.substr(1, 2), 16);
 	var g = parseInt(color.substr(3, 2), 16);
 	var b = parseInt(color.substr(5, 2), 16);
@@ -39,30 +47,8 @@ function  toGradient(){
 	}else{
 		lM = ll.toString().substr(0, 4)*100 + "%";
 	}
-	$("#row").find("img").css({"background-color": "#FFFFFF"});
-	$("#row").find("img").css({"background-image": "-webkit-radial-gradient(hsla("+ hM +","+ sM +","+ lM +",1),hsla("+ hM +","+ sM +","+ lM +",.8),hsla("+ hM +","+ sM +","+ lM +",.6),hsla("+ hM +","+ sM +","+ lM +",.4),hsla("+ hM +","+ sM +","+ lM +",.2))"});
+	return [hM, sM, lM];
 }
-
-// function rgbToHsl(r, g, b){
-//     r /= 255, g /= 255, b /= 255;
-//     var max = Math.max(r, g, b), min = Math.min(r, g, b);
-//     var h, s, l = (max + min) / 2;
-
-//     if(max == min){
-//         h = s = 0; // achromatic
-//     }else{
-//         var d = max - min;
-//         s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-//         switch(max){
-//             case r: h = (g - b) / d + (g < b ? 6 : 0); break;
-//             case g: h = (b - r) / d + 2; break;
-//             case b: h = (r - g) / d + 4; break;
-//         }
-//         h /= 6;
-//     }
-
-//     return [h, s, l];
-// }
 
 function rgbToHsl(r, g, b){
 	r /= 255, g /= 255, b /= 255;
@@ -90,4 +76,19 @@ function rgbToHsl(r, g, b){
 		s = (max-min) / (2 - 2*l);
 	}
 	return [h, s, l];
+}
+
+function geneCurrentLight(ob){
+	var id = $(ob).attr("id");
+	CurrentLight = "light" + id.substr(1, id.length - 1);
+}
+
+function applyToOne(){
+	var color = document.getElementById('colorForEach').value;
+	var hsl = toGradient(color);
+	var hM = hsl[0];
+	var sM = hsl[1];
+	var lM = hsl[2];
+	$("#"+CurrentLight).css({"background-color": "#FFFFFF"});
+	$("#"+CurrentLight).css({"background-image": "-webkit-radial-gradient(hsla("+ hM +","+ sM +","+ lM +",1),hsla("+ hM +","+ sM +","+ lM +",.8),hsla("+ hM +","+ sM +","+ lM +",.6),hsla("+ hM +","+ sM +","+ lM +",.4),hsla("+ hM +","+ sM +","+ lM +",.2))"});
 }
