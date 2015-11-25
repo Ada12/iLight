@@ -137,19 +137,19 @@
                   <div class="panel-body">
                     <ul class="list-group leftColor">
                       <li class="list-group-item leftColor">
-                        <input name="Fruit" type="checkbox" value="" />&nbsp;&nbsp;第一盏灯
+                        <input name="Fruit" type="checkbox" id="lA1" onclick="addLightA(this)" value="灯泡" />&nbsp;&nbsp;灯泡
                       </li>
                       <li class="list-group-item leftColor">
-                        <input name="Fruit" type="checkbox" value="" />&nbsp;&nbsp;第二盏灯
+                        <input name="Fruit" type="checkbox" id="lA2" onclick="addLightA(this)" value="大红灯笼" />&nbsp;&nbsp;大红灯笼
                       </li>
                       <li class="list-group-item leftColor">
-                        <input name="Fruit" type="checkbox" value="" />&nbsp;&nbsp;第三盏灯
+                        <input name="Fruit" type="checkbox" id="lA3" onclick="addLightA(this)" value="梨花灯" />&nbsp;&nbsp;梨花灯
                       </li>
                       <li class="list-group-item leftColor">
-                        <input name="Fruit" type="checkbox" value="" />&nbsp;&nbsp;第四盏灯
+                        <input name="Fruit" type="checkbox" id="lA4" onclick="addLightA(this)" value="欧式灯" />&nbsp;&nbsp;欧式灯
                       </li>
                       <li class="list-group-item leftColor">
-                        <input name="Fruit" type="checkbox" value="" />&nbsp;&nbsp;第五盏灯
+                        <input name="Fruit" type="checkbox" id="lA5" onclick="addLightA(this)" value="动感灯" />&nbsp;&nbsp;动感灯
                       </li>
                     </ul>
                   </div>
@@ -167,19 +167,19 @@
                   <div class="panel-body">
                     <ul class="list-group leftColor">
                       <li class="list-group-item leftColor">
-                        <input name="Fruit" type="radio" value="" />&nbsp;&nbsp;第一个视频
+                        <input class="radioItemA" name="videoA" type="radio" value="国庆视频" />&nbsp;&nbsp;国庆视频
                       </li>
                       <li class="list-group-item leftColor">
-                        <input name="Fruit" type="radio" value="" />&nbsp;&nbsp;第二个视频
+                        <input class="radioItemA" name="videoA" type="radio" value="春节视频" />&nbsp;&nbsp;春节视频
                       </li>
                       <li class="list-group-item leftColor">
-                        <input name="Fruit" type="radio" value="" />&nbsp;&nbsp;第三个视频
+                        <input class="radioItemA" name="videoA" type="radio" value="中秋视频" />&nbsp;&nbsp;中秋视频
                       </li>
                       <li class="list-group-item leftColor">
-                        <input name="Fruit" type="radio" value="" />&nbsp;&nbsp;第四个视频
+                        <input class="radioItemA" name="videoA" type="radio" value="宣传视频" />&nbsp;&nbsp;宣传视频
                       </li>
                       <li class="list-group-item leftColor">
-                        <input name="Fruit" type="radio" value="" />&nbsp;&nbsp;第五个视频
+                        <input class="radioItemA" name="videoA" type="radio" value="元宵视频" />&nbsp;&nbsp;元宵视频
                       </li>
                     </ul>
                     <button class="btn btn-primary addVideo" data-toggle="collapse" href="#collapse" aria-expanded="false" aria-controls="collapse">
@@ -262,6 +262,11 @@
                   </div>
                 </div>
               </div>
+            <h4>调整顺序：</h4>
+            <div class="myPanelBody">
+              <ul id="lightSequenceA" class="myListGroup leftColor">
+              </ul>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
@@ -419,20 +424,21 @@
                   <div class="panel-body">
                     <ul class="list-group leftColor">
                       <li class="list-group-item leftColor">
-                        <input name="Fruit" type="checkbox" value="" />&nbsp;&nbsp;第一盏灯
+                        <input name="Fruit" type="checkbox" id="lP1" onclick="addLightP(this)" value="灯泡" />&nbsp;&nbsp;灯泡
                       </li>
                       <li class="list-group-item leftColor">
-                        <input name="Fruit" type="checkbox" value="" />&nbsp;&nbsp;第二盏灯
+                        <input name="Fruit" type="checkbox" id="lP2" onclick="addLightP(this)" value="大红灯笼" />&nbsp;&nbsp;大红灯笼
                       </li>
                       <li class="list-group-item leftColor">
-                        <input name="Fruit" type="checkbox" value="" />&nbsp;&nbsp;第三盏灯
+                        <input name="Fruit" type="checkbox" id="lP3" onclick="addLightP(this)" value="梨花灯" />&nbsp;&nbsp;梨花灯
                       </li>
                       <li class="list-group-item leftColor">
-                        <input name="Fruit" type="checkbox" value="" />&nbsp;&nbsp;第四盏灯
+                        <input name="Fruit" type="checkbox" id="lP4" onclick="addLightP(this)" value="欧式灯" />&nbsp;&nbsp;欧式灯
                       </li>
                       <li class="list-group-item leftColor">
-                        <input name="Fruit" type="checkbox" value="" />&nbsp;&nbsp;第五盏灯
+                        <input name="Fruit" type="checkbox" id="lP5" onclick="addLightP(this)" value="动感灯" />&nbsp;&nbsp;动感灯
                       </li>
+                    </ul>
                     </ul>
                   </div>
                 </div>
@@ -449,19 +455,19 @@
                   <div class="panel-body">
                     <ul class="list-group leftColor">
                       <li class="list-group-item leftColor">
-                        <input name="Fruit" type="radio" value="" />&nbsp;&nbsp;第一个视频
+                        <input class="radioItemP" name="videoP" type="radio" value="国庆视频" />&nbsp;&nbsp;国庆视频
                       </li>
                       <li class="list-group-item leftColor">
-                        <input name="Fruit" type="radio" value="" />&nbsp;&nbsp;第二个视频
+                        <input class="radioItemP" name="videoP" type="radio" value="春节视频" />&nbsp;&nbsp;春节视频
                       </li>
                       <li class="list-group-item leftColor">
-                        <input name="Fruit" type="radio" value="" />&nbsp;&nbsp;第三个视频
+                        <input class="radioItemP" name="videoP" type="radio" value="中秋视频" />&nbsp;&nbsp;中秋视频
                       </li>
                       <li class="list-group-item leftColor">
-                        <input name="Fruit" type="radio" value="" />&nbsp;&nbsp;第四个视频
+                        <input class="radioItemP" name="videoP" type="radio" value="宣传视频" />&nbsp;&nbsp;宣传视频
                       </li>
                       <li class="list-group-item leftColor">
-                        <input name="Fruit" type="radio" value="" />&nbsp;&nbsp;第五个视频
+                        <input class="radioItemP" name="videoP" type="radio" value="元宵视频" />&nbsp;&nbsp;元宵视频
                       </li>
                     </ul>
                     <button class="btn btn-primary addVideo" data-toggle="collapse" href="#collapseExampleForEach" aria-expanded="false" aria-controls="collapseExampleForEach">
@@ -544,6 +550,11 @@
                 </div>
               </div>
             </div>
+            <h4>调整顺序：</h4>
+            <div class="myPanelBody">
+              <ul id="lightSequenceP" class="myListGroup leftColor">
+              </ul>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
@@ -605,7 +616,74 @@
         //   alert(aa);
         // });
       });
-          </script>
+      $(".radioItemA").change(function() {
+        if ( $("#selectedVideoA").length > 0 ) { 
+            $("#selectedVideoA").remove();
+        }
+        var $selectedvalue = $("input[name='videoA']:checked").val();
+        var $new = $('<li id="selectedVideoA" class="list-group-item leftColor">\
+                   &nbsp;&nbsp;'+ $selectedvalue +'\
+                   <div class="updownPos">\
+                     <a href="#" class="up">[上移]</a>\
+                     <a href="#" class="down">[下移]</a>\
+                     <a href="#" class="delete">[删除]</a>\
+                   </div>\
+                    <input type="text" class="myInput" placeholder="分钟"/>\
+             </li>');
+        $new.appendTo( $("#lightSequenceA") );
+        $(function(){
+         $("a.up").click(function(){
+           $(this).parents("li").prev().before($(this).parents("li")); 
+         })
+        });
+
+        $(function(){
+           $("a.down").click(function(){
+             $(this).parents("li").next().after($(this).parents("li")); 
+           })
+          });
+
+        $(function(){
+           $("a.delete").click(function(){
+            $(this).parents("li").remove();
+           })
+          });
+      });
+
+    $(".radioItemP").change(function() {
+        if ( $("#selectedVideoP").length > 0 ) { 
+            $("#selectedVideoP").remove();
+        }
+        var $selectedvalue = $("input[name='videoP']:checked").val();
+        var $new = $('<li id="selectedVideoP" class="list-group-item leftColor">\
+                   &nbsp;&nbsp;'+ $selectedvalue +'\
+                   <div class="updownPos">\
+                     <a href="#" class="up">[上移]</a>\
+                     <a href="#" class="down">[下移]</a>\
+                     <a href="#" class="delete">[删除]</a>\
+                   </div>\
+                    <input type="text" class="myInput" placeholder="分钟"/>\
+             </li>');
+        $new.appendTo( $("#lightSequenceP") );
+        $(function(){
+         $("a.up").click(function(){
+           $(this).parents("li").prev().before($(this).parents("li")); 
+         })
+        });
+
+        $(function(){
+           $("a.down").click(function(){
+             $(this).parents("li").next().after($(this).parents("li")); 
+           })
+          });
+
+        $(function(){
+           $("a.delete").click(function(){
+            $(this).parents("li").remove();
+           })
+          });
+      });
+    </script>
     <script src="js/index.js"></script>
   </body>
 </html>

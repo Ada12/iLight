@@ -91,4 +91,79 @@ function applyToOne(){
 	var lM = hsl[2];
 	$("#"+CurrentLight).css({"background-color": "#FFFFFF"});
 	$("#"+CurrentLight).css({"background-image": "-webkit-radial-gradient(hsla("+ hM +","+ sM +","+ lM +",1),hsla("+ hM +","+ sM +","+ lM +",.8),hsla("+ hM +","+ sM +","+ lM +",.6),hsla("+ hM +","+ sM +","+ lM +",.4),hsla("+ hM +","+ sM +","+ lM +",.2))"});
+	$("#"+CurrentLight).attr("src","img/lantern.png");
 }
+
+function addLightA(ob){
+	var id=$(ob).attr("id");
+	var idSequence = id + "S";
+	if($("#"+id).is(':checked') == true){
+		var $new = $('<li id='+ idSequence +' class="list-group-item leftColor">\
+                 	 &nbsp;&nbsp;'+ ob.value +'\
+                 	 <div class="updownPos">\
+                 	    <a href="#" class="up">[上移]</a>\
+                     	<a href="#" class="down">[下移]</a>\
+                     	<a href="#" class="delete">[删除]</a>\
+                 	 </div>\
+                  	<input type="text" class="myInput" placeholder="分钟"/>\
+          	 </li>');
+	$new.appendTo( $("#lightSequenceA") );
+	}else{
+		$("#" + idSequence).remove();
+	}
+	$(function(){
+       $("a.up").click(function(){
+         $(this).parents("li").prev().before($(this).parents("li")); 
+       })
+      });
+
+    $(function(){
+       $("a.down").click(function(){
+         $(this).parents("li").next().after($(this).parents("li")); 
+       })
+      });
+
+    $(function(){
+       $("a.delete").click(function(){
+        $(this).parents("li").remove();
+       })
+      });
+}
+
+function addLightP(ob){
+	var id=$(ob).attr("id");
+	var idSequence = id + "S";
+	if($("#"+id).is(':checked') == true){
+		var $new = $('<li id='+ idSequence +' class="list-group-item leftColor">\
+                 	 &nbsp;&nbsp;'+ ob.value +'\
+                 	 <div class="updownPos">\
+                 	    <a href="#" class="up">[上移]</a>\
+                     	<a href="#" class="down">[下移]</a>\
+                     	<a href="#" class="delete">[删除]</a>\
+                 	 </div>\
+                  	<input type="text" class="myInput" placeholder="分钟"/>\
+          	 </li>');
+	$new.appendTo( $("#lightSequenceP") );
+	}else{
+		$("#" + idSequence).remove();
+	}
+	$(function(){
+       $("a.up").click(function(){
+         $(this).parents("li").prev().before($(this).parents("li")); 
+       })
+      });
+
+    $(function(){
+       $("a.down").click(function(){
+         $(this).parents("li").next().after($(this).parents("li")); 
+       })
+      });
+
+    $(function(){
+       $("a.delete").click(function(){
+        $(this).parents("li").remove();
+       })
+      });
+}
+
+
